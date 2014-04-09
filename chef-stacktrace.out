@@ -1,25 +1,156 @@
-Generated at Wed Apr 09 07:14:02 -0400 2014
-ArgumentError: Invalid only_if/not_if command: true (TrueClass)
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource/conditional.rb:56:in `initialize'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource/conditional.rb:37:in `new'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource/conditional.rb:37:in `only_if'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource.rb:553:in `only_if'
-/root/chef/cookbooks/maxmem/recipes/default.rb:8:in `from_file'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/dsl/recipe.rb:123:in `instance_eval'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/dsl/recipe.rb:123:in `build_resource'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/dsl/recipe.rb:86:in `declare_resource'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/dsl/recipe.rb:42:in `method_missing'
-/root/chef/cookbooks/maxmem/recipes/default.rb:6:in `from_file'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/cookbook_version.rb:237:in `load_recipe'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/run_context.rb:151:in `load_recipe'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/run_context/cookbook_compiler.rb:139:in `compile_recipes'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/run_context/cookbook_compiler.rb:137:in `each'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/run_context/cookbook_compiler.rb:137:in `compile_recipes'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/run_context/cookbook_compiler.rb:74:in `compile'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/run_context.rb:86:in `load'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/policy_builder/expand_node_object.rb:75:in `setup_run_context'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/client.rb:252:in `setup_run_context'
-/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/client.rb:413:in `do_run'
+Generated at Wed Apr 09 09:17:27 -0400 2014
+Mixlib::ShellOut::ShellCommandFailed: bash[install nginx from source] (nginx_src::default line 2) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '1'
+---- Begin output of "bash"  "/tmp/chef-script20140409-10610-1g3dqz7-0" ----
+STDOUT: checking for OS
+ + Linux 2.6.32-042stab084.14 i686
+checking for C compiler ... found
+ + using GNU C compiler
+ + gcc version: 4.4.7 20120313 (Red Hat 4.4.7-4) (GCC) 
+checking for gcc -pipe switch ... found
+checking for gcc builtin atomic operations ... found
+checking for C99 variadic macros ... found
+checking for gcc variadic macros ... found
+checking for unistd.h ... found
+checking for inttypes.h ... found
+checking for limits.h ... found
+checking for sys/filio.h ... not found
+checking for sys/param.h ... found
+checking for sys/mount.h ... found
+checking for sys/statvfs.h ... found
+checking for crypt.h ... found
+checking for Linux specific features
+checking for epoll ... found
+checking for EPOLLRDHUP ... found
+checking for O_PATH ... not found
+checking for sendfile() ... found
+checking for sendfile64() ... found
+checking for sys/prctl.h ... found
+checking for prctl(PR_SET_DUMPABLE) ... found
+checking for sched_setaffinity() ... found
+checking for crypt_r() ... found
+checking for sys/vfs.h ... found
+checking for nobody group ... found
+checking for poll() ... found
+checking for /dev/poll ... not found
+checking for kqueue ... not found
+checking for crypt() ... not found
+checking for crypt() in libcrypt ... found
+checking for F_READAHEAD ... not found
+checking for posix_fadvise() ... found
+checking for O_DIRECT ... found
+checking for F_NOCACHE ... not found
+checking for directio() ... not found
+checking for statfs() ... found
+checking for statvfs() ... found
+checking for dlopen() ... not found
+checking for dlopen() in libdl ... found
+checking for sched_yield() ... found
+checking for SO_SETFIB ... not found
+checking for SO_ACCEPTFILTER ... not found
+checking for TCP_DEFER_ACCEPT ... found
+checking for TCP_KEEPIDLE ... found
+checking for TCP_FASTOPEN ... not found
+checking for TCP_INFO ... found
+checking for accept4() ... found
+checking for int size ... 4 bytes
+checking for long size ... 4 bytes
+checking for long long size ... 8 bytes
+checking for void * size ... 4 bytes
+checking for uint64_t ... found
+checking for sig_atomic_t ... found
+checking for sig_atomic_t size ... 4 bytes
+checking for socklen_t ... found
+checking for in_addr_t ... found
+checking for in_port_t ... found
+checking for rlim_t ... found
+checking for uintptr_t ... uintptr_t found
+checking for system byte ordering ... little endian
+checking for size_t size ... 4 bytes
+checking for off_t size ... 8 bytes
+checking for time_t size ... 4 bytes
+checking for setproctitle() ... not found
+checking for pread() ... found
+checking for pwrite() ... found
+checking for sys_nerr ... found
+checking for localtime_r() ... found
+checking for posix_memalign() ... found
+checking for memalign() ... found
+checking for mmap(MAP_ANON|MAP_SHARED) ... found
+checking for mmap("/dev/zero", MAP_SHARED) ... found
+checking for System V shared memory ... found
+checking for POSIX semaphores ... not found
+checking for POSIX semaphores in libpthread ... found
+checking for struct msghdr.msg_control ... found
+checking for ioctl(FIONBIO) ... found
+checking for struct tm.tm_gmtoff ... found
+checking for struct dirent.d_namlen ... not found
+checking for struct dirent.d_type ... found
+checking for sysconf(_SC_NPROCESSORS_ONLN) ... found
+checking for openat(), fstatat() ... found
+checking for getaddrinfo() ... found
+checking for PCRE library ... not found
+checking for PCRE library in /usr/local/ ... not found
+checking for PCRE library in /usr/include/pcre/ ... not found
+checking for PCRE library in /usr/pkg/ ... not found
+checking for PCRE library in /opt/local/ ... not found
+
+./configure: error: the HTTP rewrite module requires the PCRE library.
+You can either disable the module by using --without-http_rewrite_module
+option, or install the PCRE library into the system, or build the PCRE library
+statically from the source with nginx by using --with-pcre=<path> option.
+STDERR: --2014-04-09 09:17:18--  http://nginx.org/download/nginx-1.5.13.tar.gz
+Resolving nginx.org... 206.251.255.63
+Connecting to nginx.org|206.251.255.63|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 802922 (784K) [application/octet-stream]
+Saving to: `nginx-1.5.13.tar.gz'
+
+     0K .......... .......... .......... .......... ..........  6%  216K 3s
+    50K .......... .......... .......... .......... .......... 12%  783K 2s
+   100K .......... .......... .......... .......... .......... 19%  823K 2s
+   150K .......... .......... .......... .......... .......... 25%  913K 1s
+   200K .......... .......... .......... .......... .......... 31%  827K 1s
+   250K .......... .......... .......... .......... .......... 38%  633K 1s
+   300K .......... .......... .......... .......... .......... 44% 3.75M 1s
+   350K .......... .......... .......... .......... .......... 51%  930K 1s
+   400K .......... .......... .......... .......... .......... 57%  832K 1s
+   450K .......... .......... .......... .......... .......... 63%  819K 0s
+   500K .......... .......... .......... .......... .......... 70%  833K 0s
+   550K .......... .......... .......... .......... .......... 76%  885K 0s
+   600K .......... .......... .......... .......... .......... 82%  464K 0s
+   650K .......... .......... .......... .......... .......... 89%  854K 0s
+   700K .......... .......... .......... .......... .......... 95%  847K 0s
+   750K .......... .......... .......... ....                 100% 3.47M=1.1s
+
+2014-04-09 09:17:19 (720 KB/s) - `nginx-1.5.13.tar.gz' saved [802922/802922]
+---- End output of "bash"  "/tmp/chef-script20140409-10610-1g3dqz7-0" ----
+Ran "bash"  "/tmp/chef-script20140409-10610-1g3dqz7-0" returned 1
+/usr/lib/ruby/gems/1.8/gems/mixlib-shellout-1.4.0/lib/mixlib/shellout.rb:257:in `invalid!'
+/usr/lib/ruby/gems/1.8/gems/mixlib-shellout-1.4.0/lib/mixlib/shellout.rb:244:in `error!'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/mixin/shell_out.rb:45:in `shell_out!'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/provider/execute.rb:60:in `action_run'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/mixin/why_run.rb:52:in `call'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/mixin/why_run.rb:52:in `add_action'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/provider.rb:155:in `converge_by'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/provider/execute.rb:59:in `action_run'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/provider/script.rb:38:in `action_run'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/provider.rb:120:in `send'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/provider.rb:120:in `run_action'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource.rb:625:in `run_action'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/runner.rb:49:in `run_action'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/runner.rb:81:in `converge'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/runner.rb:81:in `each'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/runner.rb:81:in `converge'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource_collection.rb:98:in `execute_each_resource'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource_collection/stepable_iterator.rb:116:in `call'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource_collection/stepable_iterator.rb:116:in `call_iterator_block'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource_collection/stepable_iterator.rb:85:in `step'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource_collection/stepable_iterator.rb:104:in `iterate'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource_collection/stepable_iterator.rb:55:in `each_with_index'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/resource_collection.rb:96:in `execute_each_resource'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/runner.rb:80:in `converge'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/client.rb:335:in `converge'
+/usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/client.rb:415:in `do_run'
 /usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/client.rb:200:in `run'
 /usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/client.rb:194:in `fork'
 /usr/lib/ruby/gems/1.8/gems/chef-11.10.4/bin/../lib/chef/client.rb:194:in `run'

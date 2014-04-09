@@ -5,6 +5,7 @@
                "recipe[crondemo]", 
                "recipe[crondemo::goodbye]",
                "recipe[ipcheck::with_library]", 
- 	       "recipe[maxmem]"
+ 	       "recipe[maxmem]",
+	       "recipe[nginx_src]"
 	      ]
 }
