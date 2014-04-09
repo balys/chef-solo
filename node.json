@@ -1,4 +1,10 @@
 
 {
- "run_list": [ "recipe[helloworld]", "recipe[crondemo]", "recipe[crondemo::goodbye]" ]
+ "run_list": [ 
+	       "recipe[helloworld]", 
+               "recipe[crondemo]", 
+               "recipe[crondemo::goodbye]",
+               "recipe[ipcheck::with_library]", 
+ 	       "recipe[maxmem]"
+	      ]
 }
